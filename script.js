@@ -39,12 +39,12 @@ function checkWinCondition(array){
     for (let condition of winConditions) {
         const [a, b, c] = condition; // each iteration creates its own scope
         if (array[a] == 1 && array[a] === array[b] && array[a] === array[c]) {
-            console.log("You fucking win!");
+            console.log("You win!");
             player_turn = -1;
             return true;  // Winning condition met
         }
         if (array[a] == 2 && array[a] === array[b] && array[a] === array[c]) {
-            console.log("You fucking lose!");
+            console.log("You lose!");
             player_turn = -1;
             return true;  // Winning condition met
         }
@@ -56,7 +56,7 @@ function checkWinCondition(array){
         }
     }
     // if no spaces left, its a draw
-    console.log("its a fucking draw!");
+    console.log("its a draw!");
     player_turn = -1;
     return true;
 }
