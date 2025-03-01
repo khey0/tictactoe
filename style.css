@@ -13,11 +13,19 @@ body{
     aspect-ratio: 1 / 1; /* Ensures it remains a perfect square */
     left:  50%;
     top: 50%;
-    z-index: 3;
     transform: translate(-50%, -50%); /* Moves it back by half its own width and height */
     position: absolute;
 }
 
 .space{
     background-color:blanchedalmond;
+    position: relative;
+}
+
+#game_end_message{
+    background-color:lightgoldenrodyellow;
+    left:  50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Moves it back by half its own width and height */
+    position: absolute;
 }
