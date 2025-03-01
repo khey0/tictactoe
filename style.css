@@ -22,10 +22,11 @@ body{
     position: relative;
 }
 
-#game_end_message{
+#game_end_menu{
     background-color:lightgoldenrodyellow;
     left:  50%;
     top: 50%;
     transform: translate(-50%, -50%); /* Moves it back by half its own width and height */
     position: absolute;
+    display: none;
 }
