@@ -7,6 +7,10 @@ let game_array = [
 let player_turn = 0;
 /* -1 - game ends, 0 - player, 1 - Computer */
 let starting_player = "player";
+let game_end_message = document.getElementById("game_end_message");
+let game_end_menu = document.getElementById("game_end_menu");
+game_end_menu.style.display = "none";
+game_end_message.style.display = "none";
 
 document.querySelectorAll(".space").forEach(space => {
     space.addEventListener("click", function () {
@@ -36,15 +40,21 @@ function checkWinCondition(array){
         [0, 3, 6], [1, 4, 7], [2, 5, 8],  // Columns
         [0, 4, 8], [2, 4, 6]              // Diagonals
     ];
+
     for (let condition of winConditions) {
         const [a, b, c] = condition; // each iteration creates its own scope
+        console.log("Checking win condition...");
         if (array[a] == 1 && array[a] === array[b] && array[a] === array[c]) {
-            console.log("You win!");
+            game_end_message.innerHTML = "You win!";
+            game_end_menu.style.display = "block";
+            game_end_message.style.display = "block";
             player_turn = -1;
             return true;  // Winning condition met
         }
         if (array[a] == 2 && array[a] === array[b] && array[a] === array[c]) {
-            console.log("You lose!");
+            game_end_message.innerHTML = "You lose!";
+            game_end_menu.style.display = "block";
+            game_end_message.style.display = "block";
             player_turn = -1;
             return true;  // Winning condition met
         }
@@ -56,7 +66,9 @@ function checkWinCondition(array){
         }
     }
     // if no spaces left, its a draw
-    console.log("its a draw!");
+    game_end_message.innerHTML = "It's a draw!";
+    game_end_menu.style.display = "block";
+    game_end_message.style.display = "block";
     player_turn = -1;
     return true;
 }
