@@ -21,13 +21,17 @@
         </div>
         <div id = "game_end_menu">
             <p id="game_end_message"></p>
-            <button onclick = "gameStart()">Play again?</button>
-            <button onclick = "returnToStartMenu()">Return to menu</button>
+            <button  id = "play_again_button">Play again?</button>
+            <button  id = "return_to_menu_button" onclick = "returnToStartMenu()">Return to menu</button>
         </div>
-        <div id = "start_menu">
-            <button id = "play_button" onclick = "gameStart()">
+        <div class = "menu" id = "start_menu">
+            <button id = "play_button" onclick = "chooseDifficulty()">
                 Play
             </button>
+        </div>
+        <div id = "difficulty_menu">
+            <button id = "easy_button">Easy</button>
+            <button id = "impossible_button">Impossible</button>
         </div>
     </body>
 </html>
